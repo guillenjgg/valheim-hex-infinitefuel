@@ -27,6 +27,7 @@ namespace HexInfiniteFuel
 
         public void Awake()
         {
+            //test
             Instance = this;
 
             _pluginEnabled = Config.Bind("General", $"Enable {PluginName}", true, $"Enable or disable {PluginName.ToLower()}.");
