@@ -8,7 +8,6 @@ using UnityEngine;
 namespace HexInfiniteFuel
 {
     [BepInPlugin(PluginGuid, PluginName, PluginVersion)]
-    [BepInProcess("valheim.exe")]
     public class Plugin : BaseUnityPlugin
     {
         private const string PluginGuid = "hex.infinitefuel";
