@@ -1,6 +1,6 @@
 ﻿{
-  "name": "Infinite_Fuel",
-  "version_number": "1.0.0",
+  "name": "HexInfiniteFuel",
+  "version_number": "1.0.1",
   "website_url": "https://github.com/guillenjgg/valheim-hex-infinitefuel",
   "description": "Keeps fireplaces and torches lit without requiring fuel.",
   "dependencies": [

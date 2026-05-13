@@ -12,12 +12,16 @@
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
+    <!-- VERSION SOURCE OF TRUTH - update here and in Plugin.cs PluginVersion -->
+    <ModVersion>1.0.1</ModVersion>
+    <ModName>HexInfiniteFuel</ModName>
+    <ModDescription>Keeps fireplaces and torches lit without requiring fuel.</ModDescription>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>false</DebugSymbols>
     <DebugType>none</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\..\..\..\debug_builds\</OutputPath>
+    <OutputPath>..\..\..\..\debug_builds\HexInfiniteFuel\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -25,7 +29,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>none</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\..\..\..\release\Hex-HexInfintiFuel\</OutputPath>
+    <OutputPath>..\..\..\..\release\HexInfintiFuel\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -68,12 +72,25 @@
     <None Include="CHANGELOG.md">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="manifest.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
     <None Include="README.md">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
+  <!-- Auto-generate manifest.json from version properties above -->
+  <Target Name="GenerateManifest" BeforeTargets="PreBuildEvent">
+    <PropertyGroup>
+      <ManifestContent>{
+  "name": "$(ModName)",
+  "version_number": "$(ModVersion)",
+  "website_url": "https://github.com/guillenjgg/valheim-hex-infinitefuel",
+  "description": "$(ModDescription)",
+  "dependencies": [
+    "denikson-BepInExPack_Valheim-5.4.2333"
+  ]
+}</ManifestContent>
+    </PropertyGroup>
+    <WriteLinesToFile File="$(MSBuildProjectDirectory)\manifest.json" Lines="$(ManifestContent)" Overwrite="true" Encoding="UTF-8" />
+    <Copy SourceFiles="$(MSBuildProjectDirectory)\manifest.json" DestinationFolder="$(OutputPath)" />
+  </Target>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
