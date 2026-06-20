@@ -12,7 +12,7 @@ namespace HexInfiniteFuel
     {
         private const string PluginGuid = "hex.infinitefuel";
         private const string PluginName = "Infinite Fuel";
-        private const string PluginVersion = "1.0.1";
+        private const string PluginVersion = "1.0.2";
 
         private ConfigEntry<bool> _pluginEnabled;
 
@@ -36,11 +36,13 @@ namespace HexInfiniteFuel
             HarmonyInstance = new Harmony(PluginGuid);
             HarmonyInstance.PatchAll();
 
-            logger.LogInfo($"{PluginName} v{PluginVersion} is loaded!");
+            logger.LogInfo($"{PluginName} v{PluginVersion} loaded.");
         }
 
         public void OnDestroy()
         {
+            logger.LogInfo($"{PluginName} v{PluginVersion} unloaded.");
+
             if (_pluginEnabled != null)
             {
                 _pluginEnabled.SettingChanged -= OnPluginEnabledChanged;
@@ -49,8 +51,8 @@ namespace HexInfiniteFuel
             HarmonyInstance?.UnpatchSelf();
             HarmonyInstance = null;
             Instance = null;
+            logger = null;
 
-            logger.LogInfo($"{PluginName} v{PluginVersion} is unloaded!");
         }
 
         private void OnPluginEnabledChanged(object sender, EventArgs e)

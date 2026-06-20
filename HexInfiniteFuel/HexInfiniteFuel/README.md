@@ -7,9 +7,8 @@ HexInfiniteFuel is a lightweight Valheim mod that keeps supported fireplaces lit
 
 ## Features
 
-- No fuel requirement for fireplaces, Bonfires, Torches, or any other prefab that uses the `Fireplace` component.
+- No fuel requirement for fireplaces, bonfires, torches, hearts, or any other prefab that uses the `Fireplace` component.
 - Simple client-side style gameplay tweak
-- Minimal setup
 
 ## Requirements
 
@@ -24,3 +23,9 @@ Install the mod through Thunderstore or r2modman.
 1. Install BepInExPack Valheim.
 2. Extract this package.
 3. Copy the `plugins/HexInfiniteFuel/HexInfiniteFuel.dll` file into your Valheim `BepInEx/plugins/HexInfiniteFuel/` folder.
+
+## Support and Feedback
+https://discord.gg/wU2FXD94v4
+
+## Github
+https://github.com/guillenjgg/valheim-hex-infinitefuel
