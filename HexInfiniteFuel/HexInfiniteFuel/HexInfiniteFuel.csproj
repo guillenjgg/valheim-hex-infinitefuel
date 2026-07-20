@@ -13,7 +13,7 @@
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
     <!-- VERSION SOURCE OF TRUTH - update here and in Plugin.cs PluginVersion -->
-    <ModVersion>1.0.2</ModVersion>
+    <ModVersion>1.0.3</ModVersion>
     <ModName>HexInfiniteFuel</ModName>
     <ModDescription>Keeps fireplaces and torches lit without requiring fuel.</ModDescription>
   </PropertyGroup>
