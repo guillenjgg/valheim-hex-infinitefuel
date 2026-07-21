@@ -13,7 +13,7 @@
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
     <!-- VERSION SOURCE OF TRUTH - update here and in Plugin.cs PluginVersion -->
-    <ModVersion>1.0.2</ModVersion>
+    <ModVersion>1.0.3</ModVersion>
     <ModName>HexInfiniteFuel</ModName>
     <ModDescription>Keeps fireplaces and torches lit without requiring fuel.</ModDescription>
   </PropertyGroup>
@@ -21,7 +21,7 @@
     <DebugSymbols>false</DebugSymbols>
     <DebugType>none</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\..\..\..\debug_builds\HexInfiniteFuel\</OutputPath>
+    <OutputPath>..\..\..\..\..\..\AppData\Roaming\r2modmanPlus-local\Valheim\profiles\Dev\BepInEx\plugins\HexInfiniteFuel\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>

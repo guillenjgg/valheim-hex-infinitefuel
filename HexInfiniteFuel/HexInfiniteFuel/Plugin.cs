@@ -3,6 +3,7 @@ using BepInEx.Configuration;
 using BepInEx.Logging;
 using HarmonyLib;
 using System;
+using System.Reflection;
 using UnityEngine;
 
 namespace HexInfiniteFuel
@@ -12,7 +13,7 @@ namespace HexInfiniteFuel
     {
         private const string PluginGuid = "hex.infinitefuel";
         private const string PluginName = "Infinite Fuel";
-        private const string PluginVersion = "1.0.2";
+        private const string PluginVersion = "1.0.3";
 
         private ConfigEntry<bool> _pluginEnabled;
 
@@ -33,8 +34,9 @@ namespace HexInfiniteFuel
 
             _pluginEnabled.SettingChanged += OnPluginEnabledChanged;
 
+            Assembly assembly = Assembly.GetExecutingAssembly();
             HarmonyInstance = new Harmony(PluginGuid);
-            HarmonyInstance.PatchAll();
+            HarmonyInstance.PatchAll(assembly);
 
             logger.LogInfo($"{PluginName} v{PluginVersion} loaded.");
         }
