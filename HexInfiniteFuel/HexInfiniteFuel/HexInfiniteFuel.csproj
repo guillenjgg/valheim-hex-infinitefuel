@@ -13,7 +13,7 @@
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
     <!-- VERSION SOURCE OF TRUTH - update here and in Plugin.cs PluginVersion -->
-    <ModVersion>1.0.3</ModVersion>
+    <ModVersion>1.0.4</ModVersion>
     <ModName>HexInfiniteFuel</ModName>
     <ModDescription>Keeps fireplaces and torches lit without requiring fuel.</ModDescription>
   </PropertyGroup>
@@ -40,7 +40,7 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="assembly_valheim_publicized">
-      <HintPath>..\..\..\..\publicized_assemblies\assembly_valheim_publicized.dll</HintPath>
+      <HintPath>..\..\..\..\publicized_assemblies\1.0-release\assembly_valheim_publicized.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="BepInEx">

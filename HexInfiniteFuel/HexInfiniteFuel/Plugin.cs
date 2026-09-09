@@ -13,7 +13,7 @@ namespace HexInfiniteFuel
     {
         private const string PluginGuid = "hex.infinitefuel";
         private const string PluginName = "Infinite Fuel";
-        private const string PluginVersion = "1.0.3";
+        private const string PluginVersion = "1.0.4";
 
         private ConfigEntry<bool> _pluginEnabled;
 
