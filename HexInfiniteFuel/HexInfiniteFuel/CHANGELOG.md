@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.0.4
+
+* Update to Valheim 1.0 release
+
 ## v1.0.3
 
 * Clarified in the README that HexInfiniteFuel is a client-side mod and must be installed by every player in multiplayer.
