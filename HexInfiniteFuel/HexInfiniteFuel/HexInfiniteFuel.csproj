@@ -12,16 +12,12 @@
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
-    <!-- VERSION SOURCE OF TRUTH - update here and in Plugin.cs PluginVersion -->
-    <ModVersion>1.0.4</ModVersion>
-    <ModName>HexInfiniteFuel</ModName>
-    <ModDescription>Keeps fireplaces and torches lit without requiring fuel.</ModDescription>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>false</DebugSymbols>
     <DebugType>none</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\..\..\..\..\..\AppData\Roaming\r2modmanPlus-local\Valheim\profiles\Dev\BepInEx\plugins\HexInfiniteFuel\</OutputPath>
+    <OutputPath>..\..\..\..\debug_builds\HexInfiniteFuel\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -40,7 +36,7 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="assembly_valheim_publicized">
-      <HintPath>..\..\..\..\publicized_assemblies\1.0-release\assembly_valheim_publicized.dll</HintPath>
+      <HintPath>..\..\..\..\publicized_assemblies\v1.0.20\assembly_valheim_publicized.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="BepInEx">
@@ -79,21 +75,5 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
-  <!-- Auto-generate manifest.json from version properties above -->
-  <Target Name="GenerateManifest" BeforeTargets="PreBuildEvent">
-    <PropertyGroup>
-      <ManifestContent>{
-  "name": "$(ModName)",
-  "version_number": "$(ModVersion)",
-  "website_url": "https://discord.gg/wU2FXD94v4",
-  "description": "$(ModDescription)",
-  "dependencies": [
-    "denikson-BepInExPack_Valheim-5.4.2333"
-  ]
-}</ManifestContent>
-    </PropertyGroup>
-    <WriteLinesToFile File="$(MSBuildProjectDirectory)\manifest.json" Lines="$(ManifestContent)" Overwrite="true" Encoding="UTF-8" />
-    <Copy SourceFiles="$(MSBuildProjectDirectory)\manifest.json" DestinationFolder="$(OutputPath)" />
-  </Target>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

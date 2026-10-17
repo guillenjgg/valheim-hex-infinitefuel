@@ -13,7 +13,7 @@ namespace HexInfiniteFuel
     {
         private const string PluginGuid = "hex.infinitefuel";
         private const string PluginName = "Infinite Fuel";
-        private const string PluginVersion = "1.0.4";
+        private const string PluginVersion = "1.0.5";
 
         private ConfigEntry<bool> _pluginEnabled;
 
@@ -34,9 +34,8 @@ namespace HexInfiniteFuel
 
             _pluginEnabled.SettingChanged += OnPluginEnabledChanged;
 
-            Assembly assembly = Assembly.GetExecutingAssembly();
             HarmonyInstance = new Harmony(PluginGuid);
-            HarmonyInstance.PatchAll(assembly);
+            HarmonyInstance.PatchAll(Assembly.GetExecutingAssembly());
 
             logger.LogInfo($"{PluginName} v{PluginVersion} loaded.");
         }
@@ -64,7 +63,7 @@ namespace HexInfiniteFuel
 
         private void ApplyInfiniteFuelToAllFireplaces()
         {
-            var fireplaces = UnityEngine.Object.FindObjectsByType<Fireplace>(FindObjectsSortMode.None);
+            var fireplaces = FindObjectsByType<Fireplace>(FindObjectsSortMode.None);
 
             foreach (var fireplace in fireplaces)
             {
