@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.0.5
+
+- Compiled against Valheim v1.0.20
+
 ## v1.0.4
 
 * Update to Valheim 1.0 release

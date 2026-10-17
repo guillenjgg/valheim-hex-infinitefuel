@@ -5,6 +5,8 @@ HexInfiniteFuel is a lightweight Valheim mod that keeps supported fireplaces lit
 > ⚠️ **Compatibility Notice**
 > This mod sets `m_infiniteFuel = true` on all `Fireplace` components at instantiation. It may conflict with any other mod that reads or writes the `Fireplace.m_infiniteFuel` field. If you experience issues, disable one of the conflicting mods or check mod load order.
 
+![HexInfiniteFuel](https://raw.githubusercontent.com/guillenjgg/valheim-hex-mod-images/main/hexinfinitefuel/hexinfinitefuel_2.png)
+
 ## Supported Fireplace Prefabs
 - BogWitch_Fire_Pit
 - bonfire
